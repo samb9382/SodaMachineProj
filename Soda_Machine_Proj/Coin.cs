@@ -10,7 +10,7 @@ namespace Soda_Machine_Proj
     {
         //member variables
         public double Value;
-        private double value;
+        protected double value;
         public string name;
 
         //constructor
