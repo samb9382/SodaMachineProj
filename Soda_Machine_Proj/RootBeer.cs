@@ -12,7 +12,7 @@ namespace Soda_Machine_Proj
         public RootBeer(string name, double cost)
         {
             name = "RootBeer";
-            this.cost = cost;
+            cost = 0.60;
         }
     }
 }

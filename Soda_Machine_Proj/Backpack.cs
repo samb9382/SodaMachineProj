@@ -13,6 +13,10 @@ namespace Soda_Machine_Proj
         public Backpack()
         {
             cans = new List<Can>();
+
+            cans.AddCan(Cola);
+
+
         }
 
         public void AddCan(Can can)

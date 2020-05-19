@@ -12,7 +12,7 @@ namespace Soda_Machine_Proj
         public Penny(string name, double value)
         {
             name = "Penny";
-            this.value = value;
+            value = 0.01;
 
         }
     }

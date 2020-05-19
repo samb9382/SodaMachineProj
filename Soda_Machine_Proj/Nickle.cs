@@ -12,7 +12,7 @@ namespace Soda_Machine_Proj
         public Nickle(string name, double value)
         {
             name = "Nickle";
-            this.value = value;
+            value = 0.05;
         }
     }
 }

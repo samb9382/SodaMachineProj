@@ -12,7 +12,7 @@ namespace Soda_Machine_Proj
         public Quarter(string name, double value)
         {
             name = "Quarter";
-            this.value = value;
+            value = 0.25;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Soda_Machine_Proj
         public OrangeSoda(string name, double cost)
         {
             name = "Orange Soda";
-            this.cost = cost;
+            cost = 0.06;
         }
     }
 }

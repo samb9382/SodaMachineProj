@@ -12,7 +12,7 @@ namespace Soda_Machine_Proj
         public Dime(string name, double value)
         {
             name = "Dime";
-            this.value = value;
+            value = 0.10;
         }
     }
 }
