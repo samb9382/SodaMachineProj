@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Soda_Machine_Proj
 {
-    class Penny
+    class Penny : Coin
     {
+        //constructor
+        public Penny(string name, double value)
+        {
+            name = "Penny";
+            this.value = value;
+
+        }
     }
 }

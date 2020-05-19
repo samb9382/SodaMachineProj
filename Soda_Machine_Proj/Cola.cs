@@ -8,6 +8,7 @@ namespace Soda_Machine_Proj
 {
     class Cola : Can
     {
+        //constructor
         public Cola(string name, double cost)
         {
             name = "Cola";
