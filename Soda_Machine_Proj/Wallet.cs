@@ -22,7 +22,7 @@ namespace Soda_Machine_Proj
 
         public void RemoveCoin(Coin coin)
         {
-            coins.Add(coin);
+            coins.Remove(coin);
         }
     }
 }
