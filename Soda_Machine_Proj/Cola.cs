@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Soda_Machine_Proj
 {
-    class Cola : Can
+    public class Cola : Can
     {
+
+        public string name;
+        public double cost;
+
         //constructor
-        public Cola(string name, double cost)
+        public Cola()
         {
             name = "Cola";
             cost = 0.35;

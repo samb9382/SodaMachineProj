@@ -9,16 +9,14 @@ namespace Soda_Machine_Proj
     class Backpack
     {
         List<Can> cans;
-
         public Backpack()
         {
             cans = new List<Can>();
 
-            cans.AddCan(Cola);
-
-
         }
 
+
+       
         public void AddCan(Can can)
         {
             cans.Add(can);

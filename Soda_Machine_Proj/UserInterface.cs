@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Soda_Machine_Proj
 {
-    class Simulation
+    class UserInterface
     {
-        // member variables
-        
+        Console.WriteLine("Welcome");
     }
 }

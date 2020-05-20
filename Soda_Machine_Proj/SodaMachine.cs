@@ -2,47 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Soda_Machine_Proj
 {
     class SodaMachine
     {
-        List<Coin> coins;
-
         List<Can> cans;
 
-        public SodaMachine() //list of coins in the soda machine
+
+        public SodaMachine()
         {
             cans = new List<Can>();
-        }
+            AddCans();
 
-        public void AddCan(Can can)
+
+        }
+        public void AddCans()
         {
-            cans.Add(can);
-        }
+            for (int i = 0; i < 10; i++ )
+            {
+                cans.Add(new Cola());
+                if (i < 5)
+                {
+                    cans.Add(new RootBeer());
+                }
+                cans.Add(new OrangeSoda());
+            }
 
-        public void RemoveCan(Can can)
-        {
-            cans.Remove(can);
-        }
-
-
-
-        public SodaMachine() //list of sodas in the soda machine
-        {
-            coins = new List<Coin>();
-        }
-
-        public void AddCoin(Coin coin)
-        {
-            coins.Add(coin);
-        }
-
-        public void RemoveCoin(Coin coin)
-        {
-            coins.Remove(coin);
+           
 
         }
+    }
+
+
+
+
+
+
 }
-}
+
