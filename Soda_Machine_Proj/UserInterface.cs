@@ -19,10 +19,10 @@ namespace Soda_Machine_Proj
         public void DisplayOptions()
         {
 
-            Console.WriteLine("Please make a drink selection:");
-            Console.WriteLine("One For RootBeer");
-            Console.WriteLine("Two For OrangeSoda");
-            Console.WriteLine("Three For Cola");
+            Console.WriteLine("We have three sodas in stock:");
+            Console.WriteLine("RootBeer");
+            Console.WriteLine("OrangeSoda");
+            Console.WriteLine("Cola");
         }
 
         public void ChooseSoda()
@@ -31,6 +31,29 @@ namespace Soda_Machine_Proj
             sodaChoice = Console.ReadLine();
             sodaChoice = sodaChoice.ToUpper();
             Console.WriteLine("You chose " + sodaChoice);
+        }
+
+        public void DisplayPrice()
+        {
+            switch (sodaChoice)
+            {
+                case "ROOTBEER":
+                    Console.WriteLine("You owe 0.60 cents for ROOTBEER");
+                    break;
+                case "COLA":
+                    Console.WriteLine("You owe 0.35 cents for COLA");
+                    break;
+                case "ORANGESODA":
+                    Console.WriteLine("You owe 0.06 cents for ORANGESODA");
+                    break;
+                default:
+                    Console.WriteLine("Not a valid option try again");
+                    ChooseSoda();
+                    break;
+
+
+
+            }
         }
 
     }
