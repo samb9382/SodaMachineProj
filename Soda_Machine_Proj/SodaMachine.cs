@@ -28,10 +28,9 @@ namespace Soda_Machine_Proj
             for (int i = 0; i < 10; i++ )
             {
                 cans.Add(new Cola());
-                if (i < 5)
-                {
-                    cans.Add(new RootBeer());
-                }
+                               
+                cans.Add(new RootBeer());
+                
                 cans.Add(new OrangeSoda());
             }
 

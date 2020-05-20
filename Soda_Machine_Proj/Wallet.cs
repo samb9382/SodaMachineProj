@@ -13,11 +13,25 @@ namespace Soda_Machine_Proj
         public Wallet()
         {
             coins = new List<Coin>();
+            AddCoins();
         }
 
-        public void AddCoin(Coin coin)
+        public void AddCoins()
         {
-            coins.Add(coin);
+            for (int i = 0; i < 100; i++)
+            {
+                coins.Add(new Penny());
+                if (i < 8)
+                    coins.Add(new Quarter());
+                if (i < 10)
+                {
+                    coins.Add(new Dime());
+                }
+                if (i < 20)
+                {
+                    coins.Add(new Nickle());
+                }
+            }
         }
 
         public void RemoveCoin(Coin coin)
