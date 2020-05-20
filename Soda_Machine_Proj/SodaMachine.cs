@@ -10,12 +10,16 @@ namespace Soda_Machine_Proj
     class SodaMachine
     {
         List<Can> cans;
+        List<Coin> coins;
 
 
         public SodaMachine()
         {
             cans = new List<Can>();
             AddCans();
+
+            coins = new List<Coin>();
+            AddCoins();
 
 
         }
@@ -31,8 +35,24 @@ namespace Soda_Machine_Proj
                 cans.Add(new OrangeSoda());
             }
 
-           
+        }
 
+        public void AddCoins()
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                coins.Add(new Penny());
+                if (i < 20)
+                coins.Add(new Quarter());
+                if (i < 10)
+                {
+                    coins.Add(new Dime());
+                }
+                if (i < 20)
+                {
+                    coins.Add(new Nickle());
+                }       
+            }
         }
     }
 
