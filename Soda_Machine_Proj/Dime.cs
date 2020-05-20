@@ -8,8 +8,10 @@ namespace Soda_Machine_Proj
 {
     class Dime : Coin 
     {
+        public string name;
+        public double value;
         //constructor
-        public Dime(string name, double value)
+        public Dime()
         {
             name = "Dime";
             value = 0.10;

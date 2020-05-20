@@ -15,7 +15,6 @@ namespace Soda_Machine_Proj
 
         }
 
-
        
         public void AddCan(Can can)
         {

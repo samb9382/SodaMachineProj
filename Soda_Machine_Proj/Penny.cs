@@ -8,8 +8,10 @@ namespace Soda_Machine_Proj
 {
     class Penny : Coin
     {
+        public string name;
+        public double value;
         //constructor
-        public Penny(string name, double value)
+        public Penny()
         {
             name = "Penny";
             value = 0.01;

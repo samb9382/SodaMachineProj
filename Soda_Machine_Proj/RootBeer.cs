@@ -8,8 +8,10 @@ namespace Soda_Machine_Proj
 {
     class RootBeer : Can
     {
+        public string name;
+        public double cost;
         //constructor
-        public RootBeer(string name, double cost)
+        public RootBeer()
         {
             name = "RootBeer";
             cost = 0.60;
