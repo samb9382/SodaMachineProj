@@ -97,6 +97,18 @@ namespace Soda_Machine_Proj
                 Console.WriteLine("Your change is $", runningTotal - costOfDrink);
         }
 
+        public bool checkTotal()
+        {
+            if (runningTotal >= costOfDrink)
+            {
+                return true; //have sufficient cash
+            }
+            else
+            {
+                return false;// not enough money
+            }
+        }
+
         public void DisplayPrice()
         {
             switch (sodaChoice)
@@ -117,19 +129,7 @@ namespace Soda_Machine_Proj
             }
         }
 
-        public bool checkTotal()
-        {
-            if (runningTotal >= costOfDrink)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
-        
 
         public void RunMachine()
         {
