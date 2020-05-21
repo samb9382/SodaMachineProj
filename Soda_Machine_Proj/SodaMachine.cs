@@ -9,16 +9,19 @@ namespace Soda_Machine_Proj
 {
     class SodaMachine
     {
+        //member variables 
+       
+
         List<Can> cans;
         List<Coin> coins;
 
-
+        //constructor
         public SodaMachine()
         {
-            cans = new List<Can>();
+            cans = new List<Can>();//list of cans
             AddCans();
 
-            coins = new List<Coin>();
+            coins = new List<Coin>();//list of coins
             AddCoins();
 
 

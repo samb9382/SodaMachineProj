@@ -8,13 +8,42 @@ namespace Soda_Machine_Proj
 {
     class UserInterface
     {
+        //member variables
         public string sodaChoice;
+        public double costOfDrink;
+        public double runningTotal { get; set; }
 
+        //constructor
         public UserInterface()
         {
-            Console.WriteLine("Welcome");
 
         }
+
+        public void DepositCoin(double coin) //using a double instead of a string
+        {
+            switch (coin) // can take in 1 for penny, 5 for nickle, 10 for dime, 25 for quarter
+            {
+                case (1):
+                    runningTotal += 1;
+                    break;
+                case (5):
+                    runningTotal += 5;
+                    break;
+                case (10):
+                    runningTotal += 10;
+                    break;
+                case (25):
+                    runningTotal += 25;
+                    break;
+                default:
+                    Console.WriteLine("Not a valid entry");
+                    break;
+
+
+            }
+            
+        }
+
 
         public void DisplayOptions()
         {
@@ -50,11 +79,33 @@ namespace Soda_Machine_Proj
                     Console.WriteLine("Not a valid option try again");
                     ChooseSoda();
                     break;
-
-
-
             }
         }
 
+        public bool checkTotal()
+        {
+            if (runningTotal >= costOfDrink)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void ReturnChange()
+        {
+            if (runningTotal > costOfDrink)
+                Console.WriteLine("Your change is $" runningTotal - costOfDrink);
+        }
+
+        public void RunMachine()
+        {
+            DisplayOptions();
+            ChooseSoda();
+            DisplayPrice();
+            
+        }
     }
 }

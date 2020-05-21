@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Soda_Machine_Proj
 {
-    class Wallet
+    class Wallet      
     {
+
+        public double amountofMoney;
         List<Coin> coins;
 
         public Wallet()
         {
             coins = new List<Coin>();
             AddCoins();
+            amountofMoney = 5.00;
         }
 
         public void AddCoins()
