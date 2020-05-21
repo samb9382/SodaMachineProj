@@ -11,18 +11,21 @@ namespace Soda_Machine_Proj
         //member variables
         public string sodaChoice;
         public double costOfDrink;
-        public double runningTotal { get; set; }
+        public double runningTotal;
 
         //constructor
         public UserInterface()
         {
-
+            runningTotal = 0;
         }
 
         public void DepositCoin(double coin) //using a double instead of a string
         {
+            Console.WriteLine("Please Deposit your money");
+            Console.WriteLine("Enter: 1 for a Penny, 5 for a nickle, 10 for a dime, or 25 for a Quarter");
             switch (coin) // can take in 1 for penny, 5 for nickle, 10 for dime, 25 for quarter
             {
+                
                 case (1):
                     runningTotal += 1;
                     break;
@@ -39,27 +42,59 @@ namespace Soda_Machine_Proj
                     Console.WriteLine("Not a valid entry");
                     break;
 
-
             }
             
         }
 
 
-        public void DisplayOptions()
+        public void DisplayDrinkSelection()
         {
 
             Console.WriteLine("We have three sodas in stock:");
-            Console.WriteLine("RootBeer");
-            Console.WriteLine("OrangeSoda");
-            Console.WriteLine("Cola");
+            Console.WriteLine("R -- RootBeer");
+            Console.WriteLine("O --OrangeSoda");
+            Console.WriteLine("C -- Cola");
+            Console.WriteLine("Select a Soda: C for COLA, R for ROOTBEER, O for ORANGESODA");
+            ChooseDrink(Convert.ToChar(Console.ReadLine().ToUpper()));
+
         }
 
-        public void ChooseSoda()
+        public void ChooseDrink(char sodaChoice)
         {
-            Console.WriteLine("Select a Soda: COLA, ROOTBEER, ORANGESODA");
-            sodaChoice = Console.ReadLine();
-            sodaChoice = sodaChoice.ToUpper();
-            Console.WriteLine("You chose " + sodaChoice);
+            bool sodaChoiceSelection = false;
+            while (!sodaChoiceSelection)
+            {
+                switch (sodaChoice)
+                {
+                    case 'C':
+                        Console.WriteLine("You have selected a COLA");
+                        sodaChoiceSelection = true;
+                        ReturnChange();
+                        break;
+                    case 'R':
+                        Console.WriteLine("You have selected a ROOTBEER");
+                        sodaChoiceSelection = true;
+                        ReturnChange();
+                        break;
+                    case 'O':
+                        Console.WriteLine("You have selected a ORANGESODA");
+                        sodaChoiceSelection = true;
+                        ReturnChange();
+                        break;
+                    default:
+                        Console.WriteLine("Not a valid selection. Re-enter your selection");
+                        sodaChoice = Convert.ToChar(Console.ReadLine().ToUpper());
+                        sodaChoiceSelection = false;
+                        break;
+
+                }
+            }
+        }
+
+        public void ReturnChange()
+        {
+            if (runningTotal > costOfDrink)
+                Console.WriteLine("Your change is $", runningTotal - costOfDrink);
         }
 
         public void DisplayPrice()
@@ -94,16 +129,12 @@ namespace Soda_Machine_Proj
             }
         }
 
-        public void ReturnChange()
-        {
-            if (runningTotal > costOfDrink)
-                Console.WriteLine("Your change is $" runningTotal - costOfDrink);
-        }
+        
 
         public void RunMachine()
         {
-            DisplayOptions();
-            ChooseSoda();
+            DisplayDrinkSelection();
+            ChooseDrink();
             DisplayPrice();
             
         }
